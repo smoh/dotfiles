@@ -19,8 +19,12 @@ export PS1='[\j]\e[0;32m\A\e[0m:\W\e[1;32m\$\e[0m '
 # prevent overwriting files
 set -o noclobber
 
+# if there is local installs
+#export LOCAL_INSTALLDIR=
+
 . $HOME/dotfiles/aliases
 . $HOME/dotfiles/functions
+. $HOME/dotfiles/variables
 
 alias xterm1='xterm -geometry 90x30+10+10 -fn 10x20 -bg black -fg ivory -ls -sb -right -sl 5000 +132 &'
 alias m='linm --lang=us'
