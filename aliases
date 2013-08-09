@@ -38,6 +38,7 @@ alias zshconfig='vi ~/.zshrc'
 # =======================
 # print python path
 alias pypath='python -c "import sys; print sys.path" | tr "," "\n" | grep -v "egg"'
+alias ipy='ipython'
 alias pylab='ipython --pylab'
 
 
