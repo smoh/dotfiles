@@ -38,8 +38,6 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
 Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-notes'
 
 " vim-scripts repos
 Bundle 'L9'
