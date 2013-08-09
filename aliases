@@ -39,3 +39,9 @@ alias zshconfig='vi ~/.zshrc'
 # print python path
 alias pypath='python -c "import sys; print sys.path" | tr "," "\n" | grep -v "egg"'
 alias pylab='ipython --pylab'
+
+
+# =======================
+# ssh stuff
+# =======================
+alias hecate='ssh -X semyeong@hecate.princeton.edu'
