@@ -1,0 +1,19 @@
+[user]
+	name = Semyeong Oh
+	email = semyeong.oh@gmail.com
+[core]
+	excludesfile = /Users/smoh/.gitignore_global
+	editor = vim
+	autocrlf = input
+	safecrlf = true
+[diff]
+    tool = mvimdiff
+[alias]
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)[%an]%Creset' --abbrev-commit --date=relative
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
+[color]
+	ui = true
+[difftool "mvimdiff"]
+	cmd = mvim -f -d \"$LOCAL\" \"$REMOTE\"
