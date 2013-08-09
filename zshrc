@@ -1,3 +1,14 @@
+# ================================
+#
+# .zshrc
+#
+# ================================
+
+
+
+# ================================
+# oh-my-zsh
+# ================================
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -5,13 +16,8 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
-ZSH_THEME="miloshadzic"
-#ZSH_THEME="muse"
-
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+ZSH_THEME="crunch"
+ZSH_THEME="random"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -46,6 +52,7 @@ plugins=(git python)
 
 source $ZSH/oh-my-zsh.sh
 
+
 # Customize to your needs...
 #
 . ~/.profile
@@ -53,14 +60,5 @@ source $ZSH/oh-my-zsh.sh
 # Locale settings
 export LC_CTYPE=ko_KR.UTF-8
 
-# Aliases
-alias df='df -H'
-alias du='du -h'
-alias ls='ls -vGF'
-alias c='clear'
-alias cl='clear && ls'
-alias x='exit'
-alias ipl='ipython --pylab'
-alias ip='ipython'
-alias ezsh='vi ~/.zshrc'
-alias e='emacs-24.3'
+. $HOME/dotfiles/aliases
+. $HOME/dotfiles/functions

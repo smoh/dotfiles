@@ -1,0 +1,41 @@
+# ================================
+#
+# Shell aliases
+# 
+# ================================
+
+
+alias ..='cd ..'            # Go up one directory
+alias ...='cd ../..'        # Go up two directories
+#alias rm='rm -i'
+#alias cp='cp -i'
+alias mv='mv -i'
+alias c='clear'
+alias x='exit'
+alias j='jobs'
+alias f='finger'
+alias df='df -H'
+alias du='du -h'
+alias grep='grep --color'
+
+# =======================
+# ls commands 
+# =======================
+# list directory first
+alias lsd='ls -d */'    # list only directories
+
+# list items in directory sorted by their real size
+alias dusum='for i in G M K; do du -hsx * | grep "[0-9]$i\b" | sort -nr; done 2>/dev/null'
+alias ls='ls -vGF'
+alias ll='ls -AGlFhX'
+
+alias zshconfig='vi ~/.bashrc'
+alias zshconfig='vi ~/.zshrc'
+
+
+# =======================
+# python commands 
+# =======================
+# print python path
+alias pypath='python -c "import sys; print sys.path" | tr "," "\n" | grep -v "egg"'
+alias pylab='ipython --pylab'
