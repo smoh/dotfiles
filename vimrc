@@ -140,4 +140,7 @@ if has("gui_running")
     set guifont=Consolas:h13    " set font for macvim
 endif
 
-
+" ==================================
+" NERD Commenter
+" ==================================
+let g:NERDSpaceDelims=1
