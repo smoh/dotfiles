@@ -1,0 +1,11 @@
+# ================================
+#
+# .bashrc_allmachine
+#
+# ================================
+
+
+. $HOME/dotfiles/aliases
+. $HOME/dotfiles/functions
+. $HOME/dotfiles/variables
+
