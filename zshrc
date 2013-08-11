@@ -17,7 +17,7 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="crunch"
-ZSH_THEME="random"
+ZSH_THEME="random"  # suprise me
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -53,12 +53,12 @@ plugins=(git python)
 source $ZSH/oh-my-zsh.sh
 
 
-# Customize to your needs...
-#
-. ~/.profile
+. $HOME/dotfiles/aliases
+. $HOME/dotfiles/functions
+. $HOME/dotfiles/variables
+
 
 # Locale settings
 export LC_CTYPE=ko_KR.UTF-8
 
-. $HOME/dotfiles/aliases
-. $HOME/dotfiles/functions
+

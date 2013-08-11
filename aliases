@@ -28,7 +28,7 @@ alias lsd='ls -d */'    # list only directories
 # list items in directory sorted by their real size
 alias dusum='for i in G M K; do du -hsx * | grep "[0-9]$i\b" | sort -nr; done 2>/dev/null'
 
-if [ `uname` == 'Darwin' ]; then
+if [ `uname` '==' 'Darwin' ]; then
     alias ls='ls -vGF'
 else
     alias ls='ls -vF --color'
