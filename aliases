@@ -18,6 +18,10 @@ alias df='df -H'
 alias du='du -h'
 alias grep='grep --color'
 alias vi='vim'
+alias bashconfig='vi ~/.bashrc'
+alias zshconfig='vi ~/.zshrc'
+alias vimconfig='vi ~/.vimrc'
+
 
 # =======================
 # ls commands 
@@ -35,9 +39,6 @@ else
 fi
 
 alias ll='ls -AGlFh'
-
-alias zshconfig='vi ~/.bashrc'
-alias zshconfig='vi ~/.zshrc'
 
 
 # =======================
