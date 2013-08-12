@@ -66,6 +66,7 @@ set foldlevelstart=99   " unfold everything at the start
 set cursorline		"underline current line
 set laststatus=2    " always show statusline
 set wrap            "set softwrap
+set backspace=2     "make backspace work like most other apps
 
 
 
