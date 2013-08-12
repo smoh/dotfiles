@@ -73,8 +73,8 @@ set backspace=2     "make backspace work like most other apps
 " ==================================
 " Key Bindings
 " ==================================
-:map <F10> :NERDTreeToggle<CR>
-:map <F11> :TagbarToggle<CR>
+:map <F3> :NERDTreeToggle<CR>
+:map <F4> :TagbarToggle<CR>
 
 " Toggle line number
 " nnoremap ln :call ToggleLineNumber()<CR>
