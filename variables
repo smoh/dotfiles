@@ -27,31 +27,36 @@ esac
 # they will automatically get the proper paths added.  Most things
 # that use autoconf will do this with
 # './configure --prefix=$HOME/$LOCAL_INSTALLDIR'
-if [ ! -z $LOCAL_INSTALLDIR ]; then
+#
+localinstalls () {
+    echo "load local installs"
+    
+    if [ ! -z $LOCAL_INSTALLDIR ]; then
 
-    for D in $HOME/$LOCAL_INSTALLDIR/* ; do
-        if [[ $D == *yt* ]]; then
-            continue
-        else
-            #echo $D "added"
-            if [ -d $D/bin ]; then 
-            [[ $PATH =~ (^|:)$D/bin($|:) ]] || \
-            export PATH=$D/bin${PATH:+:$PATH}
+        for D in $HOME/$LOCAL_INSTALLDIR/* ; do
+            if [[ $D == *yt* ]]; then
+                continue
+            else
+                #echo $D "added"
+                if [ -d $D/bin ]; then 
+                [[ $PATH =~ (^|:)$D/bin($|:) ]] || \
+                export PATH=$D/bin${PATH:+:$PATH}
+                fi
+
+                if [ -d $D/share/man ]; then 
+                [[ $MANPATH =~ (^|:)$D/share/man($|:) ]] || \
+                export MANPATH=$D/share/man:${MANPATH:+$MANPATH}
+                fi
+
+                if [ -d $D/man ]; then 
+                [[ $MANPATH =~ (^|:)$D/man($|:) ]] || \
+                export MANPATH=$D/man:${MANPATH:+$MANPATH}
+                fi
             fi
+        done
 
-            if [ -d $D/share/man ]; then 
-            [[ $MANPATH =~ (^|:)$D/share/man($|:) ]] || \
-            export MANPATH=$D/share/man:${MANPATH:+$MANPATH}
-            fi
-
-            if [ -d $D/man ]; then 
-            [[ $MANPATH =~ (^|:)$D/man($|:) ]] || \
-            export MANPATH=$D/man:${MANPATH:+$MANPATH}
-            fi
-        fi
-    done
-
-fi
+    fi
+}
 
 export PATH=$HOME/bin:$PATH
 export PAGER=less
