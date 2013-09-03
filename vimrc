@@ -38,17 +38,14 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle kien/ctrlp.vim
 
-" vim-scripts repos
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-"Bundle 'plasticboy/vim-markdown'
 
 filetype plugin indent on     " required!
 
 
 syntax on
-colorscheme desert256
+colorscheme calmar256-light
 set mouse=a		    " enable mouse for all modes
 set history=50		" keep 50 lines of command line history
 set ruler		    " show the cursor position all the times
@@ -63,7 +60,6 @@ set hlsearch
 set number		    "show line number
 set foldmethod=indent
 set foldlevelstart=99   " unfold everything at the start
-set cursorline		"underline current line
 set laststatus=2    " always show statusline
 set wrap            "set softwrap
 set backspace=2     "make backspace work like most other apps
