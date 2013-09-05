@@ -39,6 +39,7 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'kien/ctrlp.vim'
+Bundle 'plasticboy/vim-markdown'
 
 
 filetype plugin indent on     " required!
