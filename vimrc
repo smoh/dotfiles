@@ -3,7 +3,7 @@
 "
 " Vim Configuration file
 "
-" For the first time on another machine, install Vundle and 
+" For the first time on another machine, install Vundle and
 " run :BundleInstall
 "
 " ==============================================================
@@ -50,51 +50,77 @@ set mouse=a		    " enable mouse for all modes
 set history=50		" keep 50 lines of command line history
 set ruler		    " show the cursor position all the times
 set showcmd		    " display incomplete commands
-set incsearch		" do incremental searching
 set tabstop=4       " tab size
-set expandtab       " always use spaces as tab 
+set expandtab       " always use spaces as tab
 set softtabstop=4
 set shiftwidth=4
 let &t_Co=256       "Enable 256-color in terminal
-set hlsearch
-set number		    "show line number
 set foldmethod=indent
 set foldlevelstart=99   " unfold everything at the start
 set laststatus=2    " always show statusline
-set wrap            "set softwrap
 set backspace=2     "make backspace work like most other apps
-colorscheme calmar256-light
+set scrolloff=3     " lines above/below cursor
+set autoindent
+set hidden
+set wildmenu
+set wildmode=list:longest
+set visualbell
+set cursorline
+set relativenumber
+set undofile        "keep an undofile
 
+let mapleader = ","
 
+" searching and moving
+set ignorecase
+set smartcase
+set gdefault
+set incsearch
+set showmatch
+set hlsearch
+nnoremap <leader><space> :noh<cr>
+nnoremap <tab> %
+vnoremap <tab> %
+
+" handle long lines
+set wrap            "set softwrap
+set textwidth=79
+set formatoptions=qrn1
+set colorcolumn=85
+command! -nargs=* Wrap set wrap linebreak nolist
+
+nnoremap ; :
+au FocusLost * :wa      " save on losing focus
+
+:echom '>^.^<'
+
+" move lines up and down
+:map - ddp
+:map _ ddkP
+" upperclass the current word
+:imap <c-u> <esc>viwUei
+:nmap <c-u> viwU
 
 " ==================================
 " Key Bindings
 " ==================================
 :map <F3> :NERDTreeToggle<CR>
 :map <F4> :TagbarToggle<CR>
+set pastetoggle=<C-t>   " Prevent TAB pushing when doing copy & paste
+" strip all trailing whitespaces in the file
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+nnoremap <leader>v V`]
+" edit my vimrc on a vertical split
+nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+inoremap jj <ESC>
 
-" Toggle line number
-" nnoremap ln :call ToggleLineNumber()<CR>
-function! ToggleLineNumber()
-  if &number == '0'
-    set number
-    echo "show line number"
-  else
-    set number!
-    echo "hide line number"
-  endif
-endfunction
-
-" Prevent TAB pushing when doing copy & paste
-set pastetoggle=<C-t>
-
-" window navigation with alt+hjkl
+" Splitting windows
+nnoremap <leader>w <C-w>v<C-w>l
+" window navigation with ctrl + hjkl
 nmap <C-k> :wincmd k<CR>
 nmap <C-j> :wincmd j<CR>
 nmap <C-h> :wincmd h<CR>
 nmap <C-l> :wincmd l<CR>
-
-
 
 "let g:NERDTreeDirArrows=0       "old school with no unicode chars
 
@@ -142,3 +168,9 @@ endif
 " NERD Commenter
 " ==================================
 let g:NERDSpaceDelims=1
+
+
+" ==================================
+" ctrlp
+" ==================================
+let g:ctrlp_extensions = ['line']
