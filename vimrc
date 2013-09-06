@@ -66,6 +66,7 @@ set wildmenu
 set wildmode=list:longest
 set visualbell
 set cursorline
+colorscheme molokai
 
 " only in v7.3 or higher
 if v:version > 703
