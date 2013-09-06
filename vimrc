@@ -66,8 +66,13 @@ set wildmenu
 set wildmode=list:longest
 set visualbell
 set cursorline
-set relativenumber
-set undofile        "keep an undofile
+
+" only in v7.3 or higher
+if v:version > 703
+    set relativenumber
+    set undofile        "keep an undofile
+    set colorcolumn=85
+endif
 
 let mapleader = ","
 
@@ -86,7 +91,6 @@ vnoremap <tab> %
 set wrap            "set softwrap
 set textwidth=79
 set formatoptions=qrn1
-set colorcolumn=85
 command! -nargs=* Wrap set wrap linebreak nolist
 
 nnoremap ; :
