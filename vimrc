@@ -69,13 +69,14 @@ set cursorline
 colorscheme molokai
 
 " only in v7.3 or higher
-if v:version > 703
+if v:version > 702
     set relativenumber
     set undofile        "keep an undofile
     set colorcolumn=85
 endif
 
 let mapleader = ","
+let maplocalleader = "\\"
 
 " searching and moving
 set ignorecase
@@ -97,20 +98,19 @@ command! -nargs=* Wrap set wrap linebreak nolist
 nnoremap ; :
 au FocusLost * :wa      " save on losing focus
 
-:echom '>^.^<'
 
 " move lines up and down
-:map - ddp
-:map _ ddkP
+nnoremap - ddp
+nnoremap _ ddkP
 " upperclass the current word
-:imap <c-u> <esc>viwUei
-:nmap <c-u> viwU
+inoremap <c-u> <esc>viwUei
+nnoremap <c-u> viwU
 
 " ==================================
 " Key Bindings
 " ==================================
-:map <F3> :NERDTreeToggle<CR>
-:map <F4> :TagbarToggle<CR>
+nnoremap <F3> :NERDTreeToggle<CR>
+nnoremap <F4> :TagbarToggle<CR>
 set pastetoggle=<C-t>   " Prevent TAB pushing when doing copy & paste
 " strip all trailing whitespaces in the file
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
@@ -122,10 +122,10 @@ inoremap jj <ESC>
 " Splitting windows
 nnoremap <leader>w <C-w>v<C-w>l
 " window navigation with ctrl + hjkl
-nmap <C-k> :wincmd k<CR>
-nmap <C-j> :wincmd j<CR>
-nmap <C-h> :wincmd h<CR>
-nmap <C-l> :wincmd l<CR>
+nnoremap <C-k> :wincmd k<CR>
+nnoremap <C-j> :wincmd j<CR>
+nnoremap <C-h> :wincmd h<CR>
+nnoremap <C-l> :wincmd l<CR>
 
 "let g:NERDTreeDirArrows=0       "old school with no unicode chars
 
