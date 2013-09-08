@@ -73,6 +73,8 @@ if v:version > 702
     set relativenumber
     set undofile        "keep an undofile
     set colorcolumn=85
+else
+    set number
 endif
 
 let mapleader = ","
