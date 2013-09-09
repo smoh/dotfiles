@@ -40,7 +40,7 @@ Bundle 'LaTeX-Box-Team/LaTeX-Box'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'kien/ctrlp.vim'
 Bundle 'plasticboy/vim-markdown'
-
+Bundle 'dhruvasagar/vim-table-mode'
 
 filetype plugin indent on     " required!
 
@@ -117,6 +117,8 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap <leader>v V`]
 " edit my vimrc on a vertical split
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+nnoremap <leader>egv <C-w><C-v><C-l>:e ~/dotfiles/vimrc<cr>
+nnoremap <leader>sv <C-w><C-v><C-l>:source $MYVIMRC<cr>
 inoremap jj <ESC>
 
 " Splitting windows
@@ -164,6 +166,14 @@ let g:tagbar_type_idlang = {
     \ 'sort'      : 0,
 \ }
 
+" markdown support for tagbar
+let g:tagbar_type_mkd = {
+    \ 'ctagstype': 'markdown',
+    \ 'kinds'    : [
+        \ 'h:headings'
+    \ ],
+    \ 'sort'     : 0,
+\ }
 
 if has("gui_running")
     set guifont=Consolas:h13    " set font for macvim
