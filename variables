@@ -29,7 +29,7 @@ esac
 # './configure --prefix=$HOME/$LOCAL_INSTALLDIR'
 #
 localinstalls () {
-    echo "load local installs"
+    #echo "load local installs"
     
     if [ ! -z $LOCAL_INSTALLDIR ]; then
 
