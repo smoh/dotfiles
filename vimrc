@@ -41,6 +41,11 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'kien/ctrlp.vim'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'dhruvasagar/vim-table-mode'
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle 'ervandew/supertab'
+Bundle 'smoh/vim-snippets'
 
 filetype plugin indent on     " required!
 
@@ -189,3 +194,10 @@ let g:NERDSpaceDelims=1
 " ctrlp
 " ==================================
 let g:ctrlp_extensions = ['line']
+
+" ==================================
+" SnipMate
+" ==================================
+let g:snips_email = 'semyeong.oh@gmail.com'
+let g:snips_author = 'SMOh'
+
