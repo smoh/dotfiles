@@ -2,7 +2,7 @@
 	name = Semyeong Oh
 	email = semyeong.oh@gmail.com
 [core]
-	excludesfile = /Users/smoh/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = vim
 	autocrlf = input
 	safecrlf = true
