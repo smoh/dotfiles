@@ -1,5 +1,5 @@
-
 " ==============================================================
+
 "
 " Vim Configuration file
 "
@@ -110,8 +110,8 @@ au FocusLost * :wa      " save on losing focus
 nnoremap - ddp
 nnoremap _ ddkP
 " upperclass the current word
-inoremap <c-u> <esc>viwUei
-nnoremap <c-u> viwU
+inoremap <leader>u <esc>viwUei
+nnoremap <leader>u viwU
 
 " ==================================
 " Key Bindings
