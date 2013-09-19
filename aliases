@@ -55,6 +55,7 @@ alias pylab='ipython --pylab'
 # =======================
 alias hecate='ssh -X semyeong@hecate.princeton.edu'
 alias hebe='ssh -X semyeong@hebe.astro.princeton.edu'
+alias ='ssh -X semyeong@eunomia.astro.princeton.edu'
 
 
 
