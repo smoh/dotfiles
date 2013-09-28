@@ -46,6 +46,7 @@ Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle 'ervandew/supertab'
 Bundle 'smoh/vim-snippets'
+Bundle 'davidhalter/jedi-vim'
 
 filetype plugin indent on     " required!
 
@@ -71,7 +72,7 @@ set wildmenu
 set wildmode=list:longest
 set visualbell
 set cursorline
-colorscheme molokai
+colorscheme inkpot
 
 " only in v7.3 or higher
 if v:version > 702
@@ -153,8 +154,8 @@ let g:indent_guides_enable_on_vim_startup = 1
 "let g:indent_guides_guide_size=1
 let g:indent_guides_start_level = 2
 let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=white
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=lightgrey
 
 
 " ==================================
