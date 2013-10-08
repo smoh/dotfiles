@@ -60,7 +60,7 @@ localinstalls () {
 
 export PATH=$HOME/bin:$PATH
 export PAGER=less
-export LESS=-r         #http://ipython.org/ipython-doc/stable/config/old.html?highlight=pager 
+export LESS="-r -X"         #http://ipython.org/ipython-doc/stable/config/old.html?highlight=pager 
 export EDITOR=vim
 
 
