@@ -1,6 +1,3 @@
-[user]
-	name = Semyeong Oh
-	email = semyeong.oh@gmail.com
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = vim
