@@ -18,3 +18,5 @@
 	ui = true
 [difftool "mvimdiff"]
 	cmd = mvim -f -d \"$LOCAL\" \"$REMOTE\"
+[github]
+	user = smoh
