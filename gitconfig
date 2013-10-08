@@ -1,6 +1,3 @@
-[user]
-	name = Semyeong@hecate
-	email = semyeong.oh@gmail.com
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = vim
@@ -22,3 +19,5 @@
     diff = auto
 [difftool "mvimdiff"]
 	cmd = mvim -f -d \"$LOCAL\" \"$REMOTE\"
+[github]
+	user = smoh

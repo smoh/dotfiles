@@ -47,6 +47,8 @@ Bundle "garbas/vim-snipmate"
 Bundle 'ervandew/supertab'
 Bundle 'smoh/vim-snippets'
 Bundle 'davidhalter/jedi-vim'
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
 
 filetype plugin indent on     " required!
 
@@ -194,7 +196,7 @@ let g:tagbar_type_mkd = {
 \ }
 
 if has("gui_running")
-    set guifont=Consolas:h13    " set font for macvim
+    set guifont=Monaco\ 10    " set font for macvim
 endif
 
 " ==================================
