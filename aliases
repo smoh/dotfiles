@@ -38,7 +38,8 @@ else
     alias ls='ls -vF --color'
 fi
 
-alias ll='ls -AGlFh'
+alias lla='ls -AGlFh'
+alias ll='ls -GlFh'
 
 
 # =======================
