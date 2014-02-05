@@ -9,5 +9,7 @@ My configuration files
 .vimrc
 ------
 
-- Install jedi python package first to use jedi-vim
+- Install [vundle](https://github.com/gmarik/vundle) first, and run `:BundleInstall`
+- tagbar requires [exuberant ctags](http://ctags.sourceforge.net/). Set its path as `let g:tagbar_ctags_bin` = '/path/to/ctags'
+- Install `jedi` python package first to use jedi-vim
 

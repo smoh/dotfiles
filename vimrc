@@ -1,5 +1,4 @@
 " ==============================================================
-
 "
 " Vim Configuration file
 "
@@ -74,7 +73,6 @@ set wildmenu
 set wildmode=list:longest
 set visualbell
 set cursorline
-colorscheme inkpot
 
 " only in v7.3 or higher
 if v:version > 702
@@ -119,8 +117,8 @@ nnoremap <leader>u viwU
 " ==================================
 " Key Bindings
 " ==================================
-nnoremap <F3> :NERDTreeToggle<CR>
-nnoremap <F4> :TagbarToggle<CR>
+nnoremap <leader>nt :NERDTreeToggle<cr><cr>
+nnoremap <leader>tb :TagbarToggle<cr>
 set pastetoggle=<C-t>   " Prevent TAB pushing when doing copy & paste
 " strip all trailing whitespaces in the file
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
@@ -149,6 +147,7 @@ autocmd FileType tex setlocal tabstop=2 shiftwidth=2
 " ==================================
 let NERDTreeIgnore = ['.png$[[file]]']
 
+
 " ==================================
 " vim-indent-guides
 " ==================================
@@ -156,8 +155,6 @@ let g:indent_guides_enable_on_vim_startup = 1
 "let g:indent_guides_guide_size=1
 let g:indent_guides_start_level = 2
 let g:indent_guides_auto_colors = 0
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=white
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=lightgrey
 
 
 " ==================================
@@ -195,9 +192,6 @@ let g:tagbar_type_mkd = {
     \ 'sort'     : 0,
 \ }
 
-if has("gui_running")
-    set guifont=Monaco\ 10    " set font for macvim
-endif
 
 " ==================================
 " NERD Commenter
@@ -205,10 +199,12 @@ endif
 let g:NERDSpaceDelims=1
 
 
+
 " ==================================
 " ctrlp
 " ==================================
 let g:ctrlp_extensions = ['line']
+
 
 " ==================================
 " SnipMate
