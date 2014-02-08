@@ -1,7 +1,15 @@
 dotfiles
 ========
 
-configuration files
+My configuration files
 
-In local .bashrc, set `LOCAL_INSTALLDIR` if needed _before_ sourcing `bash_universal`.
+* In local .bashrc, set `LOCAL_INSTALLDIR` if needed _before_ sourcing `bash_universal`.
+* To include everything, just source bash_universal in .bashrc or .zshrc.
+
+.vimrc
+------
+
+- Install [vundle](https://github.com/gmarik/vundle) first, and run `:BundleInstall`
+- tagbar requires [exuberant ctags](http://ctags.sourceforge.net/). Set its path as `let g:tagbar_ctags_bin` = '/path/to/ctags'
+- Install `jedi` python package first to use jedi-vim
 

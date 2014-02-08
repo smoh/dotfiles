@@ -17,7 +17,6 @@ alias f='finger'
 alias df='df -H'
 alias du='du -h'
 alias grep='grep --color'
-alias vi='vim'
 alias bashconfig='vi ~/.bashrc'
 alias zshconfig='vi ~/.zshrc'
 alias vimconfig='vi ~/.vimrc'
@@ -38,7 +37,8 @@ else
     alias ls='ls -vF --color'
 fi
 
-alias ll='ls -AGlFh'
+alias lla='ls -AGlFh'
+alias ll='ls -GlFh'
 
 
 # =======================
@@ -54,8 +54,9 @@ alias pylab='ipython --pylab'
 # ssh stuff
 # =======================
 alias hecate='ssh -Y semyeong@hecate.princeton.edu'
-alias office='ssh -Y semyeong@eunomia.astro.princeton.edu'
 alias mypro='ssh -Y semyeong@ast1306.astro.princeton.edu'
+#alias office='ssh -Y semyeong@eunomia.astro.princeton.edu'
+alias office='ssh -Y semyeong@bespin.astro.princeton.edu'
 
 
 
@@ -68,6 +69,4 @@ alias gc='git commit'
 alias gco='git checkout'
 
 
-# t plugin
-alias t='python ~/dotfiles/t/t.py --task-dir ~/Dropbox/tasks --list tasks'
 
