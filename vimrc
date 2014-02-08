@@ -74,7 +74,6 @@ set wildmenu
 set wildmode=list:longest
 set visualbell
 set cursorline
-colorscheme inkpot
 
 " only in v7.3 or higher
 if v:version > 702
@@ -106,6 +105,7 @@ set formatoptions=qrn1
 command! -nargs=* Wrap set wrap linebreak nolist
 
 nnoremap ; :
+vnoremap ; :
 au FocusLost * :wa      " save on losing focus
 
 
@@ -195,9 +195,6 @@ let g:tagbar_type_mkd = {
     \ 'sort'     : 0,
 \ }
 
-if has("gui_running")
-    set guifont=Monaco\ 10    " set font for macvim
-endif
 
 " ==================================
 " NERD Commenter
@@ -209,6 +206,7 @@ let g:NERDSpaceDelims=1
 " ctrlp
 " ==================================
 let g:ctrlp_extensions = ['line']
+let g:ctrlp_show_hidden = 1
 
 " ==================================
 " SnipMate

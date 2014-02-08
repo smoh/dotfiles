@@ -19,12 +19,14 @@ escape `e
  
 # Window list at the bottom. hostname, centered tabs and redmarked active windows:
 hardstatus alwayslastline
-hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %y/%m/%d %{W}%c %{g}]'
+#hardstatus alwayslastline "%{=b}%{G} Screen(s): %{b}%w %=%{kG}%C%A  %D, %M/%d/%Y "
 
-# make all shelle login shells
-shell -$SHELL
+shell '/u/semyeong/bin/zsh'
 
 # Use 256 colors
 attrcolor b ".I"    # allow bold colors - necessary for some reason
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'   # tell screen how to set colors. AB = background, AF=foreground
 defbce on    # use current bg color for erased chars]]'
+
+
