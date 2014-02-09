@@ -30,6 +30,7 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'Lokaltog/vim-powerline'
@@ -48,6 +49,7 @@ Bundle 'smoh/vim-snippets'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
+Bundle 'project.tar.gz'
 
 filetype plugin indent on     " required!
 
@@ -118,7 +120,7 @@ nnoremap <leader>u viwU
 " ==================================
 " Key Bindings
 " ==================================
-nnoremap <leader>nt :NERDTreeToggle<cr><cr>
+nnoremap <leader>nt :NERDTreeTabsToggle<cr><cr>
 nnoremap <leader>tb :TagbarToggle<cr>
 set pastetoggle=<C-t>   " Prevent TAB pushing when doing copy & paste
 " strip all trailing whitespaces in the file
@@ -206,6 +208,7 @@ let g:NERDSpaceDelims=1
 " ==================================
 let g:ctrlp_extensions = ['line']
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_follow_symlinks = 1
 
 
 " ==================================
