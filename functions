@@ -18,6 +18,7 @@ extract () {
             *.tgz)            tar xzfv $1        ;;
             *.zip)            unzip $1          ;;
             *.Z)              uncompress $1     ;;
+            *.tar.sz)         tar xJfv $1       ;;
             *)                echo "'$1' cannot be extracted via extract()" ;;
         esac
     else
