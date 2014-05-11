@@ -1,10 +1,7 @@
 " ==============================================================
-"
 " Vim Configuration file
 "
-" For the first time on another machine, install Vundle and
-" run :BundleInstall
-"
+" Requires Vundle plugin manager
 " ==============================================================
 
 " ==================================
@@ -13,47 +10,54 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-Bundle 'gmarik/vundle'
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
 
 " ==================================
 " Plugins to install using Vundle
-"
-" see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
 " ==================================
 " My Bundles here:
-"
 " original repos on github
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'majutsushi/tagbar'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'Raimondi/delimitMate'
-Bundle 'noah/vim256-color'
-Bundle 'LaTeX-Box-Team/LaTeX-Box'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'kien/ctrlp.vim'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'dhruvasagar/vim-table-mode'
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-Bundle 'ervandew/supertab'
-Bundle 'smoh/vim-snippets'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
-Bundle 'project.tar.gz'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'Raimondi/delimitMate'
+Plugin 'noah/vim256-color'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'kien/ctrlp.vim'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'dhruvasagar/vim-table-mode'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'ervandew/supertab'
+Plugin 'smoh/vim-snippets'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
+Plugin 'project.tar.gz'
 
-filetype plugin indent on     " required!
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
 
-
+" ==================================
+" My other settings
+" ==================================
 syntax on
 set mouse=a		    " enable mouse for all modes
 set history=50		" keep 50 lines of command line history
