@@ -187,7 +187,7 @@ let g:tagbar_type_idlang = {
 \ }
 
 " markdown support for tagbar
-let g:tagbar_type_mkd = {
+let g:tagbar_type_markdown = {
     \ 'ctagstype': 'markdown',
     \ 'kinds'    : [
         \ 'h:headings'
@@ -209,11 +209,24 @@ let g:NERDSpaceDelims=1
 let g:ctrlp_extensions = ['line']
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_follow_symlinks = 1
+let g:ctrlp_custom_ignore = {
+    \ 'file': '\v\.(fits|pyc)$',
+    \ 'dir' : 'data'}
+nnoremap <C-p> :<C-u>CtrlPLastMode<CR>
 
 
 " ==================================
-" SnipMate
+" vim-airline
 " ==================================
-let g:snips_email = 'semyeong.oh@gmail.com'
-let g:snips_author = 'SMOh'
+let g:airline#extensions#tabline#enabled = 1
 
+
+" ==================================
+" ultisnips
+" ==================================
+let g:UltiSnipsExpandTrigger="<leader>t"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
