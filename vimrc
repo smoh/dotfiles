@@ -120,7 +120,6 @@ nnoremap <leader>u viwU
 " ==================================
 " Key Bindings
 " ==================================
-nnoremap <leader>nt :NERDTreeTabsToggle<cr><cr>
 nnoremap <leader>tb :TagbarToggle<cr>
 set pastetoggle=<C-t>   " Prevent TAB pushing when doing copy & paste
 " strip all trailing whitespaces in the file
@@ -148,16 +147,20 @@ autocmd FileType tex setlocal tabstop=2 shiftwidth=2
 " ==================================
 " NERD Tree
 " ==================================
-let NERDTreeIgnore = ['.png$[[file]]']
+let NERDTreeIgnore = ['.png$[[file]]', '\.pyc$']
 
+" ==================================
+" NERDTree-tabs
+" ==================================
+nnoremap <leader>nt :NERDTreeTabsToggle<cr><cr>
 
 " ==================================
 " vim-indent-guides
 " ==================================
 let g:indent_guides_enable_on_vim_startup = 1
-"let g:indent_guides_guide_size=1
+let g:indent_guides_guide_size=1
 let g:indent_guides_start_level = 2
-let g:indent_guides_auto_colors = 0
+"let g:indent_guides_auto_colors = 0
 
 
 " ==================================
