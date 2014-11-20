@@ -24,7 +24,6 @@ Plugin 'gmarik/Vundle.vim'
 " NOTE: comments after Bundle command are not allowed..
 " ==================================
 " My Bundles here:
-" original repos on github
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'scrooloose/nerdtree'
@@ -44,6 +43,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'smoh/vim-snippets'
+Plugin 'chriskempson/base16-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -59,11 +59,11 @@ set mouse=a		    " enable mouse for all modes
 set history=50		" keep 50 lines of command line history
 set ruler		    " show the cursor position all the times
 set showcmd		    " display incomplete commands
-set tabstop=4       " tab size
+set tabstop=2       " tab size
 set expandtab       " always use spaces as tab
-set softtabstop=4
-set shiftwidth=4
-let &t_Co=256       "Enable 256-color in terminal
+set softtabstop=2
+set shiftwidth=2
+let t_Co=256       "Enable 256-color in terminal
 set foldmethod=indent
 set foldlevelstart=99   " unfold everything at the start
 set laststatus=2    " always show statusline
@@ -74,13 +74,13 @@ set hidden
 set wildmenu
 set wildmode=list:longest
 set visualbell
-set cursorline
+"set cursorline
 
 " only in v7.3 or higher
 if v:version > 702
     set relativenumber
     set undofile        "keep an undofile
-    set colorcolumn=85
+    " set colorcolumn=85
 else
     set number
 endif
@@ -138,10 +138,6 @@ nnoremap <C-k> :wincmd k<CR>
 nnoremap <C-j> :wincmd j<CR>
 nnoremap <C-h> :wincmd h<CR>
 nnoremap <C-l> :wincmd l<CR>
-
-"let g:NERDTreeDirArrows=0       "old school with no unicode chars
-
-autocmd FileType tex setlocal tabstop=2 shiftwidth=2
 
 
 " ==================================
@@ -205,31 +201,31 @@ let g:tagbar_type_markdown = {
 let g:NERDSpaceDelims=1
 
 
-
 " ==================================
 " ctrlp
 " ==================================
 let g:ctrlp_extensions = ['line']
-let g:ctrlp_show_hidden = 1
+let g:ctrlp_show_hidden = 0
 let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_custom_ignore = {
     \ 'file': '\v\.(fits|pyc)$',
     \ 'dir' : 'data'}
-nnoremap <C-p> :<C-u>CtrlPLastMode<CR>
+" nnoremap <C-p> :<C-u>CtrlPLastMode<CR>
 
 
 " ==================================
 " vim-airline
 " ==================================
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts=1
 
 
 " ==================================
 " ultisnips
 " ==================================
 let g:UltiSnipsExpandTrigger="<leader>t"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<c-f>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
