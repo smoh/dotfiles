@@ -1,8 +1,7 @@
-" ==============================================================
+" ---------------------------------------------------------
 " Vim Configuration file
-"
 " Requires Vundle plugin manager
-" ==============================================================
+" ---------------------------------------------------------
 
 " ==================================
 " Vundle plugin manager
@@ -33,16 +32,20 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'bling/vim-airline'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/syntastic'
-Plugin 'noah/vim256-color'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-markdown'
-Plugin 'vim-scripts/ZoomWin'
 Plugin 'mattn/emmet-vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'smoh/vim-snippets'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-notes'
+Plugin 'sjl/gundo.vim'
+Plugin 'lepture/vim-jinja'
+" colorschemes
+Plugin 'noah/vim256-color'
 Plugin 'chriskempson/base16-vim'
 
 " All of your Plugins must be added before the following line
@@ -52,116 +55,23 @@ filetype plugin indent on    " required
 "filetype plugin on
 
 " ==================================
-" My other settings
+" Plugin settings
 " ==================================
-syntax on
-set mouse=a		    " enable mouse for all modes
-set history=50		" keep 50 lines of command line history
-set ruler		    " show the cursor position all the times
-set showcmd		    " display incomplete commands
-set tabstop=2       " tab size
-set expandtab       " always use spaces as tab
-set softtabstop=2
-set shiftwidth=2
-let t_Co=256       "Enable 256-color in terminal
-set foldmethod=indent
-set foldlevelstart=99   " unfold everything at the start
-set laststatus=2    " always show statusline
-set backspace=2     "make backspace work like most other apps
-set scrolloff=3     " lines above/below cursor
-set autoindent
-set hidden
-set wildmenu
-set wildmode=list:longest
-set visualbell
-"set cursorline
-
-" only in v7.3 or higher
-if v:version > 702
-    set relativenumber
-    set undofile        "keep an undofile
-    " set colorcolumn=85
-else
-    set number
-endif
-
-let mapleader = ","
-let maplocalleader = "\\"
-
-" searching and moving
-set ignorecase
-set smartcase
-set gdefault
-set incsearch
-set showmatch
-set hlsearch
-nnoremap <leader><space> :noh<cr>
-nnoremap <tab> %
-vnoremap <tab> %
-
-" handle long lines
-set wrap            "set softwrap
-set textwidth=79
-set formatoptions=qrn1
-command! -nargs=* Wrap set wrap linebreak nolist
-
-nnoremap ; :
-vnoremap ; :
-au FocusLost * :wa      " save on losing focus
-
-
-" move lines up and down
-nnoremap - ddp
-nnoremap _ ddkP
-" upperclass the current word
-inoremap <leader>u <esc>viwUei
-nnoremap <leader>u viwU
-
-" ==================================
-" Key Bindings
-" ==================================
-nnoremap <leader>tb :TagbarToggle<cr>
-set pastetoggle=<C-t>   " Prevent TAB pushing when doing copy & paste
-" strip all trailing whitespaces in the file
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
-nnoremap <leader>v V`]
-" edit my vimrc on a vertical split
-nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
-nnoremap <leader>egv <C-w><C-v><C-l>:e ~/dotfiles/vimrc<cr>
-nnoremap <leader>sv <C-w><C-v><C-l>:source $MYVIMRC<cr>
-inoremap jj <ESC>
-
-" Splitting windows
-nnoremap <leader>w <C-w>v<C-w>l
-" window navigation with ctrl + hjkl
-nnoremap <C-k> :wincmd k<CR>
-nnoremap <C-j> :wincmd j<CR>
-nnoremap <C-h> :wincmd h<CR>
-nnoremap <C-l> :wincmd l<CR>
-
-
-" ==================================
-" NERD Tree
-" ==================================
+" NERD Tree ------------------------
 let NERDTreeIgnore = ['.png$[[file]]', '\.pyc$']
 
-" ==================================
-" NERDTree-tabs
-" ==================================
+" NERDTree-tabs --------------------
+let g:nerdtree_tabs_open_on_gui_startup = 0
 nnoremap <leader>nt :NERDTreeTabsToggle<cr><cr>
 
-" ==================================
-" vim-indent-guides
-" ==================================
+" vim-indent-guides ----------------
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level = 2
 "let g:indent_guides_auto_colors = 0
 
 
-" ==================================
-" Tagbar
-" ==================================
+" Tagbar ---------------------------
 " latex support for tagbar
 let g:tagbar_type_tex = {
     \ 'ctagstype' : 'latex',
@@ -195,37 +105,125 @@ let g:tagbar_type_markdown = {
 \ }
 
 
-" ==================================
-" NERD Commenter
-" ==================================
+" NERD Commenter -------------------
 let g:NERDSpaceDelims=1
 
-
-" ==================================
-" ctrlp
-" ==================================
-let g:ctrlp_extensions = ['line']
-let g:ctrlp_show_hidden = 0
+" CtrlP ----------------------------
+let g:ctrlp_extensions = ['tag']
+let g:ctrlp_show_hidden = 1
 let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_custom_ignore = {
     \ 'file': '\v\.(fits|pyc)$',
     \ 'dir' : 'data'}
-" nnoremap <C-p> :<C-u>CtrlPLastMode<CR>
+nnoremap <C-p> :<C-u>CtrlPLastMode<CR>
 
 
-" ==================================
-" vim-airline
-" ==================================
+" vim-airline ----------------------
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts = 1
 
-
-" ==================================
-" ultisnips
-" ==================================
+" UltiSnips ------------------------
 let g:UltiSnipsExpandTrigger="<leader>t"
-let g:UltiSnipsJumpForwardTrigger="<c-f>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-
+" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+
+" ==================================
+" My settings
+" ==================================
+syntax on
+set mouse=a		      " enable mouse for all modes
+set history=50		  " keep 50 lines of command line history
+set ruler		        " show the cursor position all the times
+set showcmd		      " display incomplete commands
+set tabstop=2       " tab size
+set expandtab       " always use spaces as tab
+set softtabstop=2
+set shiftwidth=2
+let &t_Co=256       " enable 256-color in terminal
+set foldmethod=indent
+set foldlevelstart=99   " unfold everything at the start
+set laststatus=2        " always show statusline
+set backspace=2     " make backspace work like most other apps
+set scrolloff=3     " lines above/below cursor
+set autoindent
+set hidden
+set wildmenu
+set wildmode=list:longest
+set visualbell
+set cursorline
+set encoding=utf-8
+
+let mapleader = ","
+let maplocalleader = "\\"
+
+" searching and moving
+set ignorecase
+set smartcase
+set gdefault
+set incsearch
+set showmatch
+set hlsearch
+nnoremap <leader><space> :noh<cr>
+nnoremap <tab> %
+vnoremap <tab> %
+
+" handle long lines
+set wrap            "set softwrap
+set textwidth=79
+set formatoptions=qrn1
+command! -nargs=* Wrap set wrap linebreak nolist
+
+nnoremap ; :
+vnoremap ; :
+nnoremap : ;
+au FocusLost * :wa      " save on losing focus
+
+" move lines up and down
+nnoremap - ddp
+nnoremap _ ddkP
+" upperclass the current word
+inoremap <leader>u <esc>viwUei
+nnoremap <leader>u viwU
+
+" only in v7.3 or higher
+if v:version > 702
+  set relativenumber
+  set undodir=~/.vimundo
+  set undofile        "keep an undofile
+else
+  set number
+endif
+
+" Key Bindings
+nnoremap <leader>tb :TagbarToggle<cr>
+" prevent TAB pushing when doing copy & paste
+set pastetoggle=<C-t>
+" strip all trailing whitespaces in the file
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+nnoremap <leader>v V`]
+" edit my vimrc on a vertical split
+nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+nnoremap <leader>egv <C-w><C-v><C-l>:e ~/dotfiles/vimrc<cr>
+nnoremap <leader>sv <C-w><C-v><C-l>:source $MYVIMRC<cr>
+inoremap jj <ESC>
+
+" window navigation with ctrl + hjkl
+nnoremap <C-k> :wincmd k<CR>
+nnoremap <C-j> :wincmd j<CR>
+nnoremap <C-h> :wincmd h<CR>
+nnoremap <C-l> :wincmd l<CR>
+
+" more naturall splitting
+set splitbelow
+set splitright
+
+" Python
+autocmd FileType python set tabstop=4|set shiftwidth=4
+
+" Local config
+if filereadable($HOME . "/.vimrc.local")
+  source ~/.vimrc.local
+endif

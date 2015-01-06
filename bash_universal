@@ -1,9 +1,4 @@
-# ================================
-#
-# .bashrc_allmachine
-#
-# ================================
-
+# global shell configurations
 
 . $HOME/dotfiles/aliases
 . $HOME/dotfiles/functions

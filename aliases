@@ -1,33 +1,19 @@
-# ================================
-#
 # Shell aliases
-# 
-# ================================
-
 
 alias ..='cd ..'            # Go up one directory
 alias ...='cd ../..'        # Go up two directories
-#alias rm='rm -i'
-#alias cp='cp -i'
+alias rm='rm -i'
+alias cp='cp -i'
 alias mv='mv -i'
 alias c='clear'
 alias x='exit'
 alias j='jobs'
-alias f='finger'
 alias df='df -H'
 alias du='du -h'
 alias grep='grep --color'
-alias bashconfig='vi ~/.bashrc'
-alias zshconfig='vi ~/.zshrc'
-alias vimconfig='vi ~/.vimrc'
 
-
-# =======================
-# ls commands 
-# =======================
 # list directory first
 alias lsd='ls -d */'    # list only directories
-
 # list items in directory sorted by their real size
 alias dusum='for i in G M K; do du -hsx * | grep "[0-9]$i\b" | sort -nr; done 2>/dev/null'
 
@@ -40,6 +26,9 @@ fi
 alias lla='ls -AGlFh'
 alias ll='ls -GlFh'
 
+alias bashconfig='vi ~/.bashrc'
+alias zshconfig='vi ~/.zshrc'
+alias vimconfig='vi ~/.vimrc'
 
 # =======================
 # python commands 
@@ -51,22 +40,10 @@ alias pylab='ipython --pylab'
 
 
 # =======================
-# ssh stuff
-# =======================
-alias sshx='ssh -Y -c arcfour,blowfish-cbc -C'
-alias hecate='ssh -Y semyeong@hecate.princeton.edu'
-alias mypro='ssh -Y semyeong@ast1306.astro.princeton.edu'
-alias office='sshx semyeong@bespin.astro.princeton.edu'
-
-
-
-# =======================
 # git stuff
 # =======================
-alias gst='git status'
+alias gs='git status -sb'
 alias ga='git add'
 alias gc='git commit'
 alias gco='git checkout'
-
-
 

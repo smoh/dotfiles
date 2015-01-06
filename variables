@@ -1,20 +1,4 @@
-# ================================
-#
 # Shell variables
-#
-# ================================
-
-
-# If this is an xterm set the title to user@host:dir
-case $TERM in
-  xterm*|rxvt*)
-    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
-    ;;
-  *)
-    ;;
-esac
-
-
 
 # Local install paths - install things to $HOME/$LOCAL_INSTALLDIR directories, and
 # they will automatically get the proper paths added.  Most things
@@ -22,8 +6,6 @@ esac
 # './configure --prefix=$HOME/$LOCAL_INSTALLDIR'
 #
 localinstalls () {
-    #echo "load local installs"
-    
     if [ ! -z $LOCAL_INSTALLDIR ]; then
         if [ -d $HOME/$LOCAL_INSTALLDIR/bin ]; then
             export PATH=$HOME/$LOCAL_INSTALLDIR/bin:$PATH
