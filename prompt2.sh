@@ -9,7 +9,7 @@ parse_git_branch() {
   if [[ -f "$BASH_COMPLETION_DIR/git-completion.bash" ]]; then
     branch=`__git_ps1 "%s"`
   else
-    ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
+    ref=$(git symbolic-ref HEAD 2> /dev/null) || return
     branch="${ref#refs/heads/}"
   fi
 
