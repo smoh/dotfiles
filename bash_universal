@@ -4,3 +4,7 @@
 . $HOME/dotfiles/functions
 . $HOME/dotfiles/variables
 
+export PATH=$HOME/bin:$PATH
+export PAGER=less
+export LESS="-r -X"         #http://ipython.org/ipython-doc/stable/config/old.html?highlight=pager 
+export EDITOR=vim

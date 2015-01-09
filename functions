@@ -1,5 +1,39 @@
 # functions
 
+# Setup PATH and MANPATH for apps installed in non-standard e.g., home
+# directory. Set the shell variable LOCAL_INSTALLDIR.
+# part of Peyton bashrc
+localinstalls () {
+    if [ ! -z $LOCAL_INSTALLDIR ]; then
+        if [ -d $HOME/$LOCAL_INSTALLDIR/bin ]; then
+            export PATH=$HOME/$LOCAL_INSTALLDIR/bin:$PATH
+        fi
+
+        for D in $HOME/$LOCAL_INSTALLDIR/* ; do
+            if [[ $D == *yt* ]]; then
+                continue
+            else
+                #echo $D "added"
+                if [ -d $D/bin ]; then 
+                [[ $PATH =~ (^|:)$D/bin($|:) ]] || \
+                export PATH=$D/bin${PATH:+:$PATH}
+                fi
+
+                if [ -d $D/share/man ]; then 
+                [[ $MANPATH =~ (^|:)$D/share/man($|:) ]] || \
+                export MANPATH=$D/share/man:${MANPATH:+$MANPATH}
+                fi
+
+                if [ -d $D/man ]; then 
+                [[ $MANPATH =~ (^|:)$D/man($|:) ]] || \
+                export MANPATH=$D/man:${MANPATH:+$MANPATH}
+                fi
+            fi
+        done
+
+    fi
+}
+
 extract () {
     if [ -f $1 ] ; then
         case $1 in
