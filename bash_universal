@@ -2,7 +2,6 @@
 
 . $HOME/dotfiles/aliases
 . $HOME/dotfiles/functions
-. $HOME/dotfiles/variables
 
 export PATH=$HOME/bin:$PATH
 export PAGER=less

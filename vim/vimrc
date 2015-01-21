@@ -25,8 +25,6 @@ Plugin 'gmarik/Vundle.vim'
 " My Bundles here:
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'bling/vim-airline'
@@ -36,8 +34,9 @@ Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-vinegar'
 Plugin 'mattn/emmet-vim'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'smoh/vim-snippets'
 Plugin 'xolox/vim-misc'
@@ -57,13 +56,6 @@ filetype plugin indent on    " required
 " ==================================
 " Plugin settings
 " ==================================
-" NERD Tree ------------------------
-let NERDTreeIgnore = ['.png$[[file]]', '\.pyc$']
-
-" NERDTree-tabs --------------------
-let g:nerdtree_tabs_open_on_gui_startup = 0
-nnoremap <leader>nt :NERDTreeTabsToggle<cr><cr>
-
 " vim-indent-guides ----------------
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size=1
