@@ -1,7 +1,6 @@
-" ---------------------------------------------------------
+"
 " Vim Configuration file
 " Requires Vundle plugin manager
-" ---------------------------------------------------------
 
 " ==================================
 " Vundle plugin manager
@@ -24,6 +23,9 @@ Plugin 'gmarik/Vundle.vim'
 " ==================================
 " My Bundles here:
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-vinegar'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdcommenter'
@@ -33,8 +35,6 @@ Plugin 'scrooloose/syntastic'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-vinegar'
 Plugin 'mattn/emmet-vim'
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
@@ -43,27 +43,20 @@ Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 Plugin 'sjl/gundo.vim'
 Plugin 'lepture/vim-jinja'
-" colorschemes
 Plugin 'noah/vim256-color'
-Plugin 'chriskempson/base16-vim'
+Plugin 'itspriddle/vim-marked'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
 
-" ==================================
-" Plugin settings
-" ==================================
-" vim-indent-guides ----------------
+" Plugin settings ---------------------------------------------------------
+" vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level = 2
-"let g:indent_guides_auto_colors = 0
 
-
-" Tagbar ---------------------------
+" Tagbar
 nnoremap <leader>tb :TagbarToggle<cr>
 " latex support for tagbar
 let g:tagbar_type_tex = {
@@ -97,11 +90,10 @@ let g:tagbar_type_markdown = {
     \ 'sort'     : 0,
 \ }
 
-
-" NERD Commenter -------------------
+" NERD Commenter
 let g:NERDSpaceDelims=1
 
-" CtrlP ----------------------------
+" CtrlP
 let g:ctrlp_extensions = ['tag']
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_follow_symlinks = 1
@@ -110,20 +102,18 @@ let g:ctrlp_custom_ignore = {
     \ 'dir' : 'data'}
 nnoremap <C-p> :<C-u>CtrlPLastMode<CR>
 
-
-" vim-airline ----------------------
+" vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
-" UltiSnips ------------------------
+" UltiSnips
 let g:UltiSnipsExpandTrigger="<leader>t"
 let g:UltiSnipsEditSplit="vertical"
 nnoremap <leader>sn :UltiSnipsEdit<CR>
 
+" Plugin settings end ----------------------------------------------------
 
-" ==================================
-" My settings
-" ==================================
+" My settings ------------------------------------------------------------
 syntax on
 set mouse=a		      " enable mouse for all modes
 set history=50		  " keep 50 lines of command line history
@@ -139,13 +129,18 @@ set foldlevelstart=99   " unfold everything at the start
 set laststatus=2        " always show statusline
 set backspace=2     " make backspace work like most other apps
 set scrolloff=3     " lines above/below cursor
-set autoindent
+set autoindent      " keep indentation on the nwe line
 set hidden
 set wildmenu
 set wildmode=list:longest
 set visualbell
 set cursorline
+set nojoinspaces               " Only one space after '.','?','!' when joining
 set encoding=utf-8
+
+set backupdir=~/.vim/backups   " Set directory for backup files
+set undodir=~/.vim/undos
+set undofile                      "keep an undofile
 
 let mapleader = ","
 let maplocalleader = "\\"
@@ -182,15 +177,14 @@ nnoremap <leader>u viwU
 " only in v7.3 or higher
 if v:version > 702
   set relativenumber
-  set undodir=~/.vimundo
-  set undofile        "keep an undofile
 else
   set number
 endif
 
 " Key Bindings
 " prevent TAB pushing when doing copy & paste
-set pastetoggle=<C-t>
+set pastetoggle=<C-t>                        "works only in normal mode
+inoremap <C-t> <C-o>:set paste!<CR>          "for insert mode
 " strip all trailing whitespaces in the file
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap <leader>v V`]
@@ -214,6 +208,9 @@ set splitright
 
 " Python
 autocmd FileType python set tabstop=4|set shiftwidth=4
+
+" Latex
+autocmd FileType tex setlocal shiftwidth=2 tabstop=2
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
