@@ -144,6 +144,7 @@ if !isdirectory("$HOME/.vim/backups")
 endif
 if !isdirectory("$HOME/.vim/undos")
     call mkdir("$HOME/.vim/undos", "p")
+endif
 set undofile backup
 set backupdir=~/.vim/backups   " Set directory for backup files
 set undodir=~/.vim/undos
@@ -190,7 +191,8 @@ endif
 " Key Bindings
 " prevent TAB pushing when doing copy & paste
 set pastetoggle=<C-t>                        "works only in normal mode
-inoremap <C-t> <C-o>:set paste!<CR>          "for insert mode
+"for insert mode
+inoremap <C-t> <C-o>:set paste!<CR>
 " strip all trailing whitespaces in the file
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap <leader>v V`]
