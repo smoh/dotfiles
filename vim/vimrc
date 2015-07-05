@@ -190,9 +190,9 @@ endif
 
 " Key Bindings
 " prevent TAB pushing when doing copy & paste
-set pastetoggle=<C-t>                        "works only in normal mode
+set pastetoggle=<leader>tp                     "works only in normal mode
 "for insert mode
-inoremap <C-t> <C-o>:set paste!<CR>
+inoremap <leader>tp <C-o>:set paste!<CR>
 " strip all trailing whitespaces in the file
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap <leader>v V`]
