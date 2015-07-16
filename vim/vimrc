@@ -33,14 +33,12 @@ Plugin 'bling/vim-airline'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/syntastic'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
-Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Yggdroot/indentLine'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'smoh/vim-snippets'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-notes'
 Plugin 'sjl/gundo.vim'
 Plugin 'lepture/vim-jinja'
 Plugin 'noah/vim256-color'
@@ -104,7 +102,7 @@ nnoremap <C-p> :<C-u>CtrlPLastMode<CR>
 
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+" let g:airline_powerline_fonts = 1
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<leader>t"
@@ -172,7 +170,6 @@ command! -nargs=* Wrap set wrap linebreak nolist
 nnoremap ; :
 vnoremap ; :
 nnoremap : ;
-au FocusLost * :wa      " save on losing focus
 
 " move lines up and down
 nnoremap - ddp
