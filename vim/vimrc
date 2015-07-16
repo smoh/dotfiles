@@ -36,7 +36,7 @@ Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'smoh/vim-snippets'
 Plugin 'xolox/vim-misc'
@@ -139,11 +139,11 @@ set nojoinspaces               " Only one space after '.','?','!' when joining
 set encoding=utf-8
 
 " Make sure backup and undo directories are there
-if !isdirectory("$HOME/.vim/backups")
-    call mkdir("$HOME/.vim/backups", "p")
+if !isdirectory($HOME."/.vim/backups")
+    call mkdir($HOME."/.vim/backups", "p")
 endif
-if !isdirectory("$HOME/.vim/undos")
-    call mkdir("$HOME/.vim/undos", "p")
+if !isdirectory($HOME."/.vim/undos")
+    call mkdir($HOME."/.vim/undos", "p")
 endif
 set undofile backup
 set backupdir=~/.vim/backups   " Set directory for backup files
@@ -197,9 +197,9 @@ inoremap <leader>tp <C-o>:set paste!<CR>
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap <leader>v V`]
 " edit my vimrc on a vertical split
-nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
-nnoremap <leader>egv <C-w><C-v><C-l>:e ~/dotfiles/vimrc<cr>
-nnoremap <leader>sv <C-w><C-v><C-l>:source $MYVIMRC<cr>
+nnoremap <leader>ev :e $MYVIMRC<cr>
+nnoremap <leader>egv :e ~/dotfiles/vimrc<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 inoremap jj <ESC>
 
 nnoremap <space> :e.<CR>
