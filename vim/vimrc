@@ -1,118 +1,86 @@
+" ==================================
+" Vim-plug
+" ==================================
+call plug#begin('~/.vim/plugged')
+
+" Group dependencies, vim-snippets depends on ultisnips
+" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+" Plug 'wellle/targets.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-markdown'
+" Plug 'tpope/vim-vinegar'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'scrooloose/nerdcommenter'
+Plug 'Yggdroot/indentLine'
+Plug 'Valloric/YouCompleteMe'
+Plug 'bling/vim-airline'
+Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'sjl/gundo.vim'
+
+Plug 'jiangmiao/auto-pairs'
+
+" Plug 'zeis/vim-kolor'
+Plug 'junegunn/seoul256.vim'
+Plug 'NLKNguyen/papercolor-theme'
+
+Plug 'luochen1990/rainbow'
+Plug 'hdima/python-syntax'
+
+Plug 'majutsushi/tagbar'
+
+Plug 'mileszs/ack.vim'
+
+Plug 'Shougo/unite.vim'
+
+" Plug 'LaTeX-Box-Team/LaTeX-Box'
+
+" Add plugins to &runtimepath
+call plug#end()
+
+filetype plugin indent on
+
+"let g:ycm_server_keep_logfiles = 1
+"let g:ycm_server_log_level = 'debug'
+"" let g:ycm_path_to_python_interpreter = '/Users/semyeong/anaconda/bin/python'
+"let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+
+"" UltiSnips
+""let g:UltiSnipsExpandTrigger="<leader>t"
+"let g:UltiSnipsEditSplit="vertical"
 "
-" Vim Configuration file
-" Requires Vundle plugin manager
-
-" ==================================
-" Vundle plugin manager
-" ==================================
-set nocompatible               " be iMproved
-filetype off                   " required!
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-" ==================================
-" Plugins to install using Vundle
-" NOTE: comments after Bundle command are not allowed..
-" ==================================
-" My Bundles here:
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-vinegar'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'bling/vim-airline'
-Plugin 'Raimondi/delimitMate'
-Plugin 'scrooloose/syntastic'
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
-Plugin 'Yggdroot/indentLine'
-Plugin 'godlygeek/tabular'
-Plugin 'kien/ctrlp.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'SirVer/ultisnips'
-Plugin 'smoh/vim-snippets'
-Plugin 'sjl/gundo.vim'
-Plugin 'noah/vim256-color'
-" HTML editing
-Plugin 'mattn/emmet-vim'
-Plugin 'lepture/vim-jinja'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-" Plugin settings ---------------------------------------------------------
 " vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level = 2
 
-" Tagbar
-nnoremap <leader>tb :TagbarToggle<cr>
-" latex support for tagbar
-let g:tagbar_type_tex = {
-    \ 'ctagstype' : 'latex',
-    \ 'kinds'     : [
-        \ 's:sections',
-        \ 'g:graphics:0:0',
-        \ 'l:labels',
-        \ 'r:refs:1:0',
-        \ 'p:pagerefs:1:0'
-    \ ],
-    \ 'sort'    : 0,
-\ }
-
-" idl support for tagbar
-let g:tagbar_type_idlang = {
-    \ 'ctagstype' : 'IDL',
-    \ 'kinds'     : [
-        \ 'p:procedure',
-        \ 'f:function'
-    \ ],
-    \ 'sort'      : 0,
-\ }
-
-" markdown support for tagbar
-let g:tagbar_type_markdown = {
-    \ 'ctagstype': 'markdown',
-    \ 'kinds'    : [
-        \ 'h:headings'
-    \ ],
-    \ 'sort'     : 0,
-\ }
-
-" NERD Commenter
-let g:NERDSpaceDelims=1
+"" NERD Commenter
+"let g:NERDSpaceDelims=1
 
 " CtrlP
-let g:ctrlp_extensions = ['tag']
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_follow_symlinks = 1
+"let g:ctrlp_extensions = ['tag']
+"let g:ctrlp_show_hidden = 1
+"let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_custom_ignore = {
-    \ 'file': '\v\.(fits|pyc)$',
-    \ 'dir' : 'data'}
-nnoremap <C-p> :<C-u>CtrlPLastMode<CR>
+   \ 'file': '\v\.(fits|pyc|o)$'
+   \ }
+"nnoremap <C-p> :<C-u>CtrlPLastMode<CR>
 
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
-" UltiSnips
-let g:UltiSnipsExpandTrigger="<leader>t"
-let g:UltiSnipsEditSplit="vertical"
-nnoremap <leader>sn :UltiSnipsEdit<CR>
+" rainbow
+let g:rainbow_active = 1
 
-" Plugin settings end ----------------------------------------------------
+" tagbar
+let g:tagbar_vertical = 10
+let g:tagbar_autoclose = 1
 
-" My settings ------------------------------------------------------------
+
+" ----------------------------------------------------------------------------
+" My settings
+" ----------------------------------------------------------------------------
 syntax on
 set mouse=a		      " enable mouse for all modes
 set history=50		  " keep 50 lines of command line history
@@ -126,8 +94,8 @@ let &t_Co=256       " enable 256-color in terminal
 set foldmethod=indent
 set foldlevelstart=99   " unfold everything at the start
 set laststatus=2        " always show statusline
-set backspace=2     " make backspace work like most other apps
-set scrolloff=3     " lines above/below cursor
+set backspace=indent,eol,start     " make backspace work like most other apps
+set scrolloff=5     " lines above/below cursor
 set autoindent      " keep indentation on the nwe line
 set hidden
 set wildmenu
@@ -144,11 +112,16 @@ endif
 if !isdirectory($HOME."/.vim/undos")
     call mkdir($HOME."/.vim/undos", "p")
 endif
+if !isdirectory($HOME."/.vim/swaps")
+    call mkdir($HOME."/.vim/swaps", "p")
+endif
 set undofile backup
 set backupdir=~/.vim/backups   " Set directory for backup files
 set undodir=~/.vim/undos
+set directory=~/.vim/swaps
 
-let mapleader = ","
+let mapleader = ' '
+"map <space> = <leader>
 let maplocalleader = "\\"
 
 " searching and moving
@@ -158,27 +131,10 @@ set gdefault
 set incsearch
 set showmatch
 set hlsearch
-nnoremap <leader><space> :noh<cr>
-nnoremap <tab> %
-vnoremap <tab> %
 
-" handle long lines
-set wrap            "set softwrap
-set textwidth=79
-set formatoptions=qrn1
-command! -nargs=* Wrap set wrap linebreak nolist
-
-nnoremap ; :
-vnoremap ; :
-nnoremap : ;
-au FocusLost * :wa      " save on losing focus
-
-" move lines up and down
-nnoremap - ddp
-nnoremap _ ddkP
-" upperclass the current word
-inoremap <leader>u <esc>viwUei
-nnoremap <leader>u viwU
+" more naturall splitting
+set splitbelow
+set splitright
 
 " only in v7.3 or higher
 if v:version > 702
@@ -187,21 +143,24 @@ else
   set number
 endif
 
-" Key Bindings
-" prevent TAB pushing when doing copy & paste
-set pastetoggle=<leader>tp                     "works only in normal mode
-"for insert mode
-inoremap <leader>tp <C-o>:set paste!<CR>
-" strip all trailing whitespaces in the file
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
-nnoremap <leader>v V`]
-" edit my vimrc on a vertical split
-nnoremap <leader>ev :e $MYVIMRC<cr>
-nnoremap <leader>egv :e ~/dotfiles/vimrc<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
-inoremap jj <ESC>
+" ----------------------------------------------------------------------------
+" Mappings
+" ----------------------------------------------------------------------------
+let mapleader = ' '
 
-nnoremap <space> :e.<CR>
+" remove all highlights
+noremap <leader><CR> :noh<CR>
+
+" jk for escaping
+inoremap jk <Esc>
+"xnoremap jk <Esc>
+cnoremap jk <C-c>
+
+" Movement in insert mode
+inoremap <C-h> <C-o>h
+inoremap <C-l> <C-o>a
+inoremap <C-j> <C-o>j
+inoremap <C-k> <C-o>k
 
 " window navigation with ctrl + hjkl
 nnoremap <C-k> :wincmd k<CR>
@@ -209,15 +168,45 @@ nnoremap <C-j> :wincmd j<CR>
 nnoremap <C-h> :wincmd h<CR>
 nnoremap <C-l> :wincmd l<CR>
 
-" more naturall splitting
-set splitbelow
-set splitright
+" edit my vimrc on a vertical split
+nnoremap <leader>ev :e $MYVIMRC<cr>
+nnoremap <leader>elv :e ~/.vimrc.local<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" find file -  open netrw
+nnoremap <leader>ff :e.<CR>
+
+" toggle paste
+nnoremap <leader>tp :set paste!<cr>
+" toggle relative line number
+nnoremap <leader>tr :set relativenumber!<CR>
+" toggle tag bar
+nnoremap <leader>tt :TagbarToggle<CR>
+" toggle light/dark background
+nnoremap <leader>tb :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+" toggle 80 character colorcolumn
+nnoremap <leader>tc :let &colorcolumn = ( &colorcolumn == "80"? "" : "80" )<CR>
+" toggle indent guides
+nnoremap <leader>ti :IndentLinesToggle<cr>
+
+" go to tag in a horizontal split
+nnoremap <leader>gt :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+" go to tag in a vertical split
+nnoremap <leader>gtv :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
+nnoremap <leader>; :
+xnoremap <leader>; :
+
+" ----------------------------------------------------------------------------
+" FileType specific settings
+" ----------------------------------------------------------------------------
 " Python
-autocmd FileType python set tabstop=4|set shiftwidth=4
+autocmd FileType python setlocal tabstop=4 shiftwidth=4
+autocmd FileType python :iabbrev imnp import numpy as np<CR>
 
 " Latex
 autocmd FileType tex setlocal shiftwidth=2 tabstop=2
+let g:tex_conceal=""
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
