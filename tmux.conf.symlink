@@ -44,6 +44,10 @@ bind 7 select-pane -t 7
 bind 8 select-pane -t 8
 bind 9 select-pane -t 9
 
+# Window movement
+bind n next-window
+bind m previous-window
+
 # Layouts
 set -g main-pane-width 260
 bind t select-layout tiled
@@ -56,8 +60,6 @@ bind -r C-l resize-pane -R 5
 
 # 256 colors please
 set -g default-terminal "screen-256color"
-# set -g terminal-overrides 'xterm:colors=256'
-
 
 # Custom status bar
 set -g status-left-length 32
@@ -68,10 +70,10 @@ set -g status-interval 5
 set -g status-left '#[fg=colour16,bg=colour254,bold] #S #[fg=colour238,bg=colour234,nobold] '
 
 # Right bar.
-set -g status-right '#[fg=colour16,bg=colour254,bold] %d %b %R '
+set -g status-right '#[fg=colour16,bg=colour254,bold] %y-%m-%d %R '
 
-set -g window-status-format "#[fg=white,bg=colour234] #I #W "
-set -g window-status-current-format "#[fg=colour234,bg=colour39] #[fg=colour16,bg=colour39,noreverse,bold]#I:#W #[fg=colour39,bg=colour234,nobold] "
+set -g window-status-format "#[fg=white,bg=colour234] #I:#W "
+set -g window-status-current-format "#[fg=blue,underscore,bg=colour234]#I:#W"
 
 # Activity
 setw -g monitor-activity on
@@ -121,5 +123,7 @@ set -g message-fg white
 set -g message-bg colour22
 set -g message-attr bright
 
-# if-shell 'test "$(uname)" = "Darwin"' 'source ~/.tmux-osx.conf'
 set-option -g default-command "reattach-to-user-namespace -l zsh"
+
+# Local config
+if-shell "[ -f ~/.tmux.conf.local ]" 'source ~/.tmux.conf.local'
