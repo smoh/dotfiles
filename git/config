@@ -1,0 +1,32 @@
+# My gitconfig
+
+[hub]
+        protocol = https
+[user]
+        name = Semyeong Oh
+        email = semyeong.oh@gmail.com
+[alias]
+        s = status -s
+        co = checkout
+        ls      = ls-tree HEAD
+        lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)[%an]%Creset' --abbrev-commit --date=relative --all
+        rh = reset HEAD
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+        ui = true
+[core]
+        editor = nvim
+[apply]
+        whitespace = nowarn
+[mergetool]
+        keepBackup = false
+[difftool]
+        prompt = false
+[help]
+        autocorrect = 1
+[push]
+        default = simple
+[github]
+	      user = smoh
