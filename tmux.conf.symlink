@@ -2,21 +2,18 @@
 set -sg escape-time 0
 set -sg repeat-time 600
 
-# Shut up.
-set -g quiet on
-
 # Mouse
-set -g mode-mouse on
-setw -g mouse-select-window on
-setw -g mouse-select-pane on
+set -g mouse on
 
 # Less stretching to get to the first item.
 set -g base-index 1
 setw -g pane-base-index 1
 
 # Use something easier to type as the prefix.
-set -g prefix `
+# Use two prefix because I also use UK layout now..
 unbind C-b
+set -g prefix `
+set -g prefix2 §
 bind ` send-key `  # insert tilde by pressing twice
 
 # Reload the config.
@@ -62,27 +59,41 @@ bind -r C-l resize-pane -R 5
 set -g default-terminal "screen-256color"
 
 # Custom status bar
-set -g status-left-length 32
-set -g status-right-length 150
-set -g status-interval 5
+# set -g status-left-length 32
+# set -g status-right-length 150
+# set -g status-interval 5
 
-# Left bar.
-set -g status-left '#[fg=colour16,bg=colour254,bold] #S #[fg=colour238,bg=colour234,nobold] '
+# # Left bar.
+# set -g status-left '#[fg=colour16,bg=colour254,bold] #S #[fg=colour238,bg=colour234,nobold] '
 
-# Right bar.
-set -g status-right '#[fg=colour16,bg=colour254,bold] %y-%m-%d %R '
+# # Right bar.
+# set -g status-right '#[fg=colour16,bg=colour254,bold] %y-%m-%d %R '
 
-set -g window-status-format "#[fg=white,bg=colour234] #I:#W "
-set -g window-status-current-format "#[fg=blue,underscore,bg=colour234]#I:#W"
+# set -g window-status-format "#[fg=white,bg=colour234] #I:#W "
+# set -g window-status-current-format "#[fg=blue,underscore,bg=colour234]#I:#W"
 
-# Activity
-setw -g monitor-activity on
-set -g visual-activity off
+
+# -------------------------------------------------------------------
+# status line
+# From https://github.com/junegunn/dotfiles/blob/master/tmux.conf
+# -------------------------------------------------------------------
+set-option -g status-justify left
+set-option -g status-left ' #[bg=colour235]#[fg=colour185] #h #[bg=colour236] '
+set-option -g status-left-length 16
+set-option -g status-bg colour237
+set-option -g status-right '#[bg=colour236] #[bg=colour235]#[fg=colour185] #(date "+%a %b %d %H:%M") '
+set-option -g status-interval 60
+
+set-option -g pane-border-status bottom
+set-option -g pane-border-format "#{pane_index} #{pane_current_command}"
+set-option -g pane-active-border-fg colour245
+set-option -g pane-border-fg colour243
+
 
 # Autorename sanely.
 setw -g automatic-rename on
 
-# Better name management
+# # Better name management
 bind c new-window -c "#{pane_current_path}"
 bind , command-prompt "rename-window '%%'"
 
@@ -90,40 +101,16 @@ bind , command-prompt "rename-window '%%'"
 bind Escape copy-mode
 setw -g mode-keys vi
 unbind p
-bind p paste-buffer
-bind -t vi-copy H start-of-line
-bind -t vi-copy L end-of-line
-bind -t vi-copy v begin-selection
-bind -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
-bind -t vi-copy Escape cancel
-bind y run "tmux save-buffer - | reattach-to-user-namespace pbcopy"
+# bind p paste-buffer
+# bind-key -t vi-copy H start-of-line
+# bind-key -t vi-copy L end-of-line
+# bind-key -t vi-copy v begin-selection
+# bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
+# bind-key -t vi-copy Escape cancel
+# bind-key y run "tmux save-buffer - | reattach-to-user-namespace pbcopy"
 
-# fiddle with colors of status bar
-set -g status-fg white
-set -g status-bg colour234
 
-# fiddle with colors of inactive windows
-setw -g window-status-fg cyan
-setw -g window-status-bg colour234
-setw -g window-status-attr dim
 
-# change color of active window
-setw -g window-status-current-fg white
-setw -g window-status-current-bg colour88
-setw -g window-status-current-attr bright
-
-# set color of regular and active panes
-set -g pane-border-fg colour238
-set -g pane-border-bg default
-set -g pane-active-border-fg green
-set -g pane-active-border-bg default
-
-# set color of command line
-set -g message-fg white
-set -g message-bg colour22
-set -g message-attr bright
-
-set-option -g default-command "reattach-to-user-namespace -l zsh"
 
 # Local config
 if-shell "[ -f ~/.tmux.conf.local ]" 'source ~/.tmux.conf.local'
