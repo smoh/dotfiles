@@ -17,7 +17,6 @@ Plug 'wellle/targets.vim'        " additional text objects
 Plug 'Yggdroot/indentLine'       " vertical line indent guides
 Plug 'bling/vim-airline'         " pretty status line
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'   " fuzzy finder
-Plug 'https://github.com/Alok/notational-fzf-vim'
 
 "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
@@ -27,7 +26,7 @@ Plug 'https://github.com/Alok/notational-fzf-vim'
 "Plug 'junegunn/vim-easy-align'
 Plug 'neomake/neomake'            " linting and make
 
-Plug 'luochen1990/rainbow'      " rainbow-ify parentheses
+"Plug 'luochen1990/rainbow'      " rainbow-ify parentheses
 "Plug 'hdima/python-syntax'
 
 Plug 'jpmv27/vim-project', {'branch': 'jpmv27_master'}
@@ -39,7 +38,6 @@ Plug 'vimwiki/vimwiki'
 
 " Colorschemes
 Plug 'fneu/breezy'
-Plug 'morhetz/gruvbox'
 "Plug 'tpope/vim-vividchalk'
 Plug 'ajh17/spacegray.vim'
 "Plug 'albertorestifo/github.vim'
@@ -77,7 +75,7 @@ let g:airline#extensions#tabline#enabled = 1
 "let g:airline_powerline_fonts = 1
 
 " rainbow
-let g:rainbow_active = 1
+"let g:rainbow_active = 1
 
 " tagbar
 let g:tagbar_vertical = 10
@@ -269,7 +267,6 @@ autocmd! BufWritePost * Neomake
 
 set background=dark
 "set termguicolors
-colorscheme gruvbox
 
 " vimwiki
 
