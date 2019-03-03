@@ -6,7 +6,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
 " Group dependencies, vim-snippets depends on ultisnips
-"Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive'        " git wrapper
 "Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-vinegar'         " enhance netrw
