@@ -10,6 +10,16 @@ export PAGER=less
 export LESS="-r -X"         #http://ipython.org/ipython-doc/stable/config/old.html?highlight=pager 
 export EDITOR=vim
 
+# Better history
+shopt -s histappend
+export HISTFILESIZE=1000000
+export HISTSIZE=1000000
+export HISTCONTROL=ignoreboth
+export HISTIGNORE='ls:bg:fg:history'
+export HISTTIMEFORMAT='%F %T '
+shopt -s cmdhist
+export PROMPT_COMMAND='history -a'
+
 # Stash your environment variables in ~/.localrc. This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
 # you'll have access to them in your scripts.
@@ -19,22 +29,6 @@ then
 fi
 
 source $DOTFILES/git/aliases.sh
-
-# all of our zsh files
-# typeset -u config_files
-# config_files=($ZSH/**/*.zsh)
-# 
-# # load the path files
-# for file in ${(M)config_files:#*/path.zsh}
-# do
-#   source $file
-# done
-# 
-# # load everything but the path and completion files
-# for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
-# do
-#   source $file
-# done
 
 # -----------------------
 # Aliases
@@ -97,4 +91,5 @@ extract () {
         echo "'$1' is not a valid file"
     fi
 }
+
 
