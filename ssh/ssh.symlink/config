@@ -4,7 +4,7 @@ Host *
   AddKeysToAgent yes
 
 # IoA gateway machines
-Host muon
+Host muon4
   HostName muon4.ast.cam.ac.uk
   User soh
 
