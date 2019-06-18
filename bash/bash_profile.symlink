@@ -1,6 +1,11 @@
 # My global shell configurations
+# Ref: https://superuser.com/questions/183870/difference-between-bashrc-and-bash-profile
 
-# shortcut to this dotfiles path is $ZSH
+if [ -r ~/.profile  ]; then . ~/.profile; fi
+# Load bashrc only when the shell is interactive
+case "$-" in *i*) if [ -r ~/.bashrc  ]; then . ~/.bashrc; fi;; esac
+
+# shortcut to this dotfiles
 export DOTFILES=$HOME/.dotfiles
 
 # your project folder that we can `c [tab]` to
@@ -36,6 +41,8 @@ source $DOTFILES/git/aliases.sh
 #   source $file
 # done
 
+alias realpath='readlink -f'
+
 # -----------------------
 # Aliases
 # -----------------------
@@ -69,7 +76,6 @@ alias ll='ls -GlFh'
 # print python path
 alias pypath='python -c "import sys; print sys.path" | tr "," "\n" | grep -v "egg"'
 alias ipy='ipython'
-alias pylab='ipython --pylab'
 
 
 
