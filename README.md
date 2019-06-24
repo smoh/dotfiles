@@ -3,6 +3,14 @@ dotfiles
 
 My configuration files
 
-* In local .bashrc, set `LOCAL_INSTALLDIR` if needed _before_ sourcing `bash_universal`.
-* To include everything, just source bash_universal in .bashrc or .zshrc.
+```sh
+cd
+git clone https://github.com/smoh/dotfiles .dotfiles
+cd .dotfiles
+script/bootstrap
+```
+
+- Put local shell configuration in ~/.localrc and it will be sourced.
+- Put local vim config in ~/.vimrc.local and it will be sourced.
+- tmux version 2.9
 

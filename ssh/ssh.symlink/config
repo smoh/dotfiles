@@ -1,0 +1,24 @@
+# This should be at the very bottom
+Host *
+  UseKeychain yes
+  AddKeysToAgent yes
+
+# IoA gateway machines
+Host muon4
+  HostName muon4.ast.cam.ac.uk
+  User soh
+
+Host muon6
+  HostName muon6.ast.cam.ac.uk
+  User soh
+
+# wsdb
+Host cappc
+  HostName cappc127.ast.cam.ac.uk
+
+Host ioa
+  User soh
+  ProxyCommand ssh muon4 nc calx207.ast.cam.ac.uk 22
+  ControlPath ~/.ssh/sockets/%r@%h-%p
+  ControlMaster auto
+  ControlPersist 2h
