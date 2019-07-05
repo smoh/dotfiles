@@ -6,3 +6,5 @@ alias ga='git add'
 alias gc='git commit'
 alias gco='git checkout'
 alias gcd='cd "$(git rev-parse --show-toplevel)"'  # cd to git root
+
+alias gp='git push'
