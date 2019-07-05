@@ -1,37 +1,37 @@
 # My gitconfig
 
 [hub]
-        protocol = https
+  protocol = https
 [user]
-        name = Semyeong Oh
-        email = semyeong.oh@gmail.com
+  name = Semyeong Oh
+  email = semyeong.oh@gmail.com
 [alias]
-        s = status -s
-        co = checkout
-        ls      = ls-tree HEAD
-        lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)[%an]%Creset' --abbrev-commit --date=relative --all
-        rh = reset HEAD
+  s = status -s
+  co = checkout
+  ls = ls-tree HEAD
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)[%an]%Creset' --abbrev-commit --date=relative --all
+  rh = reset HEAD
 [color]
-        diff = auto
-        status = auto
-        branch = auto
-        ui = true
+  diff = auto
+  status = auto
+  branch = auto
+  ui = true
 [core]
-        editor = nvim
+  editor = nvim
 [apply]
-        whitespace = nowarn
+  whitespace = nowarn
 [mergetool]
-        keepBackup = false
+  keepBackup = false
 [difftool]
-        prompt = false
+  prompt = false
 [help]
-        autocorrect = 1
+  autocorrect = 1
 [push]
-        default = simple
+  default = simple
 [github]
-	      user = smoh
+  user = smoh
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
