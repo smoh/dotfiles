@@ -44,12 +44,25 @@ smoh_conda_env() {
   fi
 }
 
+smoh_git_prompt() {
+  branch=$(git branch --no-color 2>/dev/null | grep '^*' | colrm 1 2)
+  if [[ -n $branch ]]; then
+    echo -n "on $branch"
+    if [[ -n $(git status --porcelain) ]]; then
+      echo -n $'\033[31m'
+      echo -n '*'
+      echo -n $'\033[37m'
+    fi
+  fi
+}
+# NOTE: I think I need to execute these in a separate cell otherwise
+# this makes lastcommandfailed useless..
+
 
 export __BASEPROMPT='\e]0;\007\n\
-`smoh_conda_env` \
-\e${__USER_COLOR}\u \
-\e${__GRAY_COLOR}at \e${__ORANGE_COLOR}\h \
-\e${__GRAY_COLOR}in \e${__GREEN_COLOR}\w\
+\e${__USER_COLOR}\u\
+\e${__GRAY_COLOR}@\e${__ORANGE_COLOR}\h\
+\e${__GRAY_COLOR}:\e${__GREEN_COLOR}\w\
 `mitsuhikos_lastcommandfailed`\
 `mitsuhikos_backgroundjobs`\
 \e${__DEFAULT_COLOR}'
