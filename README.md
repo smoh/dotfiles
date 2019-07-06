@@ -17,3 +17,14 @@ script/bootstrap
 zsh
 ---
 - https://github.com/denysdovhan/spaceship-prompt
+
+Alfred
+------
+
+- lorem ipsum: https://github.com/alexchantastic/alfred-lipsum-workflow
+- reminders: https://github.com/surrealroad/alfred-reminders
+
+My own:
+- ssh tunnel.alfredworkflow: make/check ssh tunnel for the specified port.
+- fork of ADS: https://github.com/smoh/adsabs.alfredworkflow
+
