@@ -7,3 +7,4 @@ Icon
 # vim
 *.sw[a-z]
 *.un~
+.cache
