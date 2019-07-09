@@ -8,3 +8,4 @@ Icon
 *.sw[a-z]
 *.un~
 .cache
+.ipynb_checkpoints

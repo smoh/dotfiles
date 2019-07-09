@@ -22,3 +22,6 @@ Host ioa
   ControlPath ~/.ssh/sockets/%r@%h-%p
   ControlMaster auto
   ControlPersist 2h
+
+Host git.overleaf.com
+  User semyeong.oh@gmail.com
