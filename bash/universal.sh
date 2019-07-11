@@ -7,6 +7,10 @@ export EDITOR=vim
 
 source $DOTFILES/git/aliases.sh
 
+# FZF settings --
+# Use kk instead of default **
+export FZF_COMPLETION_TRIGGER='kk'
+
 
 # -----------------------
 # Aliases
