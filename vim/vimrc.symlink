@@ -20,6 +20,9 @@ Plug 'bling/vim-airline'
 " Plug 'sjl/gundo.vim'
 
 Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
+Plug 'junegunn/fzf.vim'
+
 
 " Plug 'zeis/vim-kolor'
 Plug 'junegunn/seoul256.vim'
@@ -175,7 +178,20 @@ nnoremap <leader>elv :e ~/.vimrc.local<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " find file -  open netrw
-nnoremap <leader>ff :e.<CR>
+"nnoremap <leader>ff :e.<CR>
+nnoremap <leader>ff :Files<CR>
+nnoremap <leader>ft :Tags<CR>
+nnoremap <leader>fd :e.<CR>
+
+
+" move to next and previous buffers
+nnoremap <leader>bn :bnext<CR>
+nnoremap <leader>bp :bprevious<CR>
+" buffer finder
+nnoremap <leader>bb :Buffers<CR>
+" delete buffer
+nnoremap <leader>bd :bdelete<CR>
+nnoremap <leader>bD :%bdelete<CR>
 
 " toggle paste
 nnoremap <leader>tp :set paste!<cr>
