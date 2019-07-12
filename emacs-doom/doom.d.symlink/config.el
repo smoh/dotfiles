@@ -4,7 +4,7 @@
 ;;
 ;;
 
-(setq doom-font (font-spec :family "Fira Mono" :size 14))
+(setq doom-font (font-spec :family "Fira Code" :size 14))
 
 (map! :leader "o i" #'imenu-list-smart-toggle)
 
