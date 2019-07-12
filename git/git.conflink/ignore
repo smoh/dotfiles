@@ -8,4 +8,8 @@ Icon
 *.sw[a-z]
 *.un~
 .cache
+
+#python
 .ipynb_checkpoints
+__pycache__
+*.egg-info
