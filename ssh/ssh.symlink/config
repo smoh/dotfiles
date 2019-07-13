@@ -1,5 +1,6 @@
 # This should be at the very bottom
 Host *
+  IgnoreUnknown UseKeychain
   UseKeychain yes
   AddKeysToAgent yes
 
