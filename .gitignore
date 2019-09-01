@@ -2,3 +2,6 @@
 vim/bundle
 matplotlib/matplotlib.conflink/fontlist-v300.json
 ssh/ssh.symlink/*
+
+#matplotlib font cache
+fontlist-v*.json
