@@ -20,14 +20,14 @@ Host cappc
 
 Host ioa
   User soh
-  ProxyCommand ssh muon4 nc calx207.ast.cam.ac.uk 22
+  ProxyCommand ssh muon4 nc calx207.ast.cam.ac.uk
   ControlPath ~/.ssh/sockets/%r@%h-%p
   ControlMaster auto
   ControlPersist yes
 
 Host ioa2
   User soh
-  ProxyCommand ssh muon4 nc calx208.ast.cam.ac.uk 22
+  ProxyCommand ssh muon4 nc calx208.ast.cam.ac.uk
   ControlPath ~/.ssh/sockets/%r@%h-%p
   ControlMaster auto
   ControlPersist yes
