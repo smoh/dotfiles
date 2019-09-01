@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Check if port 4269 forwarding is established.
 # ./check-tunnel.sh to output json for alfred
 # ./check-tunnel.sh 1 to post OSX notification
 
