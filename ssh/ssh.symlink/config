@@ -6,6 +6,7 @@ Host *
 
 # IoA gateway machines
 Host muon4
+  ForwardX11 yes
   HostName muon4.ast.cam.ac.uk
   User soh
 
@@ -22,7 +23,15 @@ Host ioa
   ProxyCommand ssh muon4 nc calx207.ast.cam.ac.uk 22
   ControlPath ~/.ssh/sockets/%r@%h-%p
   ControlMaster auto
-  ControlPersist 2h
+  ControlPersist yes
+
+Host ioa2
+  User soh
+  ProxyCommand ssh muon4 nc calx208.ast.cam.ac.uk 22
+  ControlPath ~/.ssh/sockets/%r@%h-%p
+  ControlMaster auto
+  ControlPersist yes
+
 
 Host git.overleaf.com
   User semyeong.oh@gmail.com
